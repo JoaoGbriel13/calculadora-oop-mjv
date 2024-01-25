@@ -71,4 +71,7 @@ classDiagram
     + getters and setters
     + toString(): String
   }
-
+Menu --> CalculadoraService
+Menu --> UserList
+UserList --> List<User>
+UserList --> User
