@@ -72,9 +72,3 @@ classDiagram
     + toString(): String
   }
 
-  Menu --> CalculadoraService
-  Menu --> UserList
-  CalculadoraService --> Scanner
-  UserList --> List<User>
-  UserList --> User
-
