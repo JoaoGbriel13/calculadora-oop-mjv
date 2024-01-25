@@ -32,7 +32,7 @@ A classe `User` representa a entidade usuário, com atributos como username, pas
 
 ## Diagrama de Classes
 
-classDiagram
+```mermaid
   class Menu {
     - scan: Scanner
     - userList: UserList
