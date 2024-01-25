@@ -32,7 +32,6 @@ A classe `User` representa a entidade usuário, com atributos como username, pas
 
 ## Diagrama de Classes
 
-```mermaid
 classDiagram
   class Menu {
     - scan: Scanner
@@ -54,7 +53,7 @@ classDiagram
   }
 
   class UserList {
-    - usersList: List<User>
+    - usersList: List
     + cadastrarUsuario(): void
     + loginUsuario(): User
     - searchUsernameAndEmail(): boolean
@@ -71,7 +70,8 @@ classDiagram
     + getters and setters
     + toString(): String
   }
-Menu --> CalculadoraService
-Menu --> UserList
-UserList --> List<User>
-UserList --> User
+
+  Menu --> CalculadoraService
+  Menu --> UserList
+  UserList --> User
+
