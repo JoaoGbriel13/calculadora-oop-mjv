@@ -71,7 +71,3 @@ A classe `User` representa a entidade usuário, com atributos como username, pas
     + toString(): String
   }
 
-  Menu --> CalculadoraService
-  Menu --> UserList
-``` mermaid
-
