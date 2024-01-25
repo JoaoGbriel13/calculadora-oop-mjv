@@ -33,39 +33,49 @@ A classe `User` representa a entidade usuário, com atributos como username, pas
 ## Diagrama de Classes
 
 ```plaintext
-+------------------------+        +---------------------------+
-|        Menu            |        |   CalculadoraService     |
-|------------------------|        |---------------------------|
-| - scan: Scanner        |        | - scanner: Scanner        |
-| - userList: UserList   |        |---------------------------|
-| - calculadoraService:  |        | + add(): double           |
-|    CalculadoraService   |        | + subtract(): double      |
-|------------------------|        | + multiply(): double      |
-| + exibirMenu(): void   |        | + divide(): double        |
-| - iniciarMenu(): void  |        +---------------------------+
-| - cadastrarUser(): void|        |         UserList           |
-| - loginUser(): User     |        |---------------------------|
-| - calcular(User): void  |        | - usersList: List<User>   |
-+------------------------+        |---------------------------|
-                                  | + cadastrarUsuario(): void|
-                                  | + loginUsuario(): User     |
-                                  | - searchUsernameAndEmail():|
-                                  |   boolean                 |
-                                  +---------------------------+
+```mermaid
+classDiagram
+  class Menu {
+    - scan: Scanner
+    - userList: UserList
+    - calculadoraService: CalculadoraService
+    + exibirMenu(): void
+    - iniciarMenu(): void
+    - cadastrarUser(): void
+    - loginUser(): User
+    - calcular(User): void
+  }
 
-+------------------------+
-|         User           |
-|------------------------|
-| - username: String     |
-| - password: String     |
-| - firstName: String    |
-| - lastName: String     |
-| - age: int             |
-| - email: String        |
-|------------------------|
-| + User(String, String, |
-|   String, String, int, |
-|   String)              |
-| + getters and setters  |
-| + toString(): String   |
-+------------------------+
+  class CalculadoraService {
+    - scanner: Scanner
+    + add(): double
+    + subtract(): double
+    + multiply(): double
+    + divide(): double
+  }
+
+  class UserList {
+    - usersList: List<User>
+    + cadastrarUsuario(): void
+    + loginUsuario(): User
+    - searchUsernameAndEmail(): boolean
+  }
+
+  class User {
+    - username: String
+    - password: String
+    - firstName: String
+    - lastName: String
+    - age: int
+    - email: String
+    + User(String, String, String, String, int, String)
+    + getters and setters
+    + toString(): String
+  }
+
+  Menu --> CalculadoraService
+  Menu --> UserList
+  CalculadoraService --> Scanner
+  UserList --> List<User>
+  UserList --> User
+
