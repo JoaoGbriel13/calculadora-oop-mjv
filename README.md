@@ -73,5 +73,4 @@ A classe `User` representa a entidade usuário, com atributos como username, pas
 
   Menu --> CalculadoraService
   Menu --> UserList
-  UserList --> User
 
